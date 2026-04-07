@@ -1,0 +1,15 @@
+# Node.js の依存ファイル（GitHubには不要な大量のファイル）
+node_modules/
+npm-debug.log*
+
+# Vite のビルド出力（GitHubには不要）
+dist/
+.vite/
+
+# OS自動生成ファイル
+.DS_Store
+Thumbs.db
+
+# エディタ設定ファイル
+.vscode/
+*.suo

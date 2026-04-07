@@ -1,0 +1,374 @@
+:root {
+    /* Philosophical & Kind: warm slate meets gentle sand */
+    --color-navy: #3D4F62;       /* Soft blue-grey, calm and gentle */
+    --color-blue-grey: #7A8FA3; /* Faded, misty mid-tone */
+    
+    /* Warm backgrounds: faint sand-cream */
+    --color-soft-blue: #F7F5F2; /* Warm off-white, like aged paper */
+    --color-bg: #FEFEFC;        /* Near-white with the softest warm tint */
+    
+    /* Text: warm dark grey, never pure black */
+    --color-text-main: #4E5460;
+    --color-text-light: #A8B2BD;
+    
+    /* Typography */
+    --font-serif: 'Shippori Mincho', serif;
+    --font-sans: 'Noto Sans JP', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text-main);
+    background-color: var(--color-bg);
+    line-height: 1.8;
+}
+
+h1, h2, h3, h4, .logo, .essay {
+    font-family: var(--font-serif);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.message-container {
+    max-width: 700px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.2rem;
+    color: var(--color-bg); 
+    letter-spacing: 0.15em;
+}
+
+.nav a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7); 
+    margin-left: 30px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--color-bg);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #3A4756 0%, #556070 50%, #3E4D5C 100%); /* Warm dark slate, like dusk sky */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 140vw;
+    height: 140vw;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, rgba(255,255,255,0) 60%);
+    pointer-events: none;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+.hero-title {
+    font-size: clamp(1.8rem, 4vw, 4rem);
+    color: #E2E8F0; /* Soft, powdery off-white (zero glare) */
+    letter-spacing: 0.35em; 
+    line-height: 2.2;
+    font-weight: 400; /* Extremely delicate and kind */
+    text-shadow: none; /* Removed shadow to eliminate harsh pop */
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+}
+
+/* Sections */
+.section {
+    padding: 180px 0; /* Massive philosophical padding */
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--color-navy);
+    text-align: center;
+    margin-bottom: 70px;
+    letter-spacing: 0.1em;
+}
+
+/* Message / Philosophy */
+.philosophy-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 160px; /* まるで余白を楽しむような深い間 */
+    margin-top: 50px;
+}
+
+.philosophy-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    position: relative;
+}
+
+.ph-num {
+    font-family: var(--font-serif);
+    font-size: 8rem;
+    color: #B8A898; /* Warm sand tone — gentle and philosophical */
+    line-height: 1;
+    margin-bottom: -40px;
+    font-weight: 400;
+    opacity: 0.22; /* Visible but whisper-soft */
+    z-index: 0;
+}
+
+.ph-title {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--color-navy);
+    margin-bottom: 30px;
+    letter-spacing: 0.25em; /* ゆっくりと読ませる */
+    font-weight: 500; /* 優しく */
+    position: relative;
+    z-index: 1;
+}
+
+.ph-desc {
+    font-size: 1.1rem;
+    line-height: 2.8; /* 詩のように非常にゆったりと */
+    color: #475569; /* 真っ黒ではなく、柔らかい藍色グレー */
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    letter-spacing: 0.08em;
+}
+
+/* About */
+.about {
+    background-color: #F4F1EC; /* Warm parchment — invites reflection */
+}
+
+.about-grid {
+    background-color: var(--color-bg);
+    padding: 80px 60px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.profile-text h3 {
+    font-size: 2rem;
+    color: var(--color-navy);
+    margin-bottom: 5px;
+}
+
+.en-name {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    font-family: var(--font-sans);
+    margin-left: 10px;
+}
+
+.profile-desc {
+    font-size: 1.1rem;
+    color: var(--color-blue-grey);
+    margin-bottom: 50px;
+}
+
+.history-title {
+    font-size: 1.2rem;
+    color: var(--color-navy);
+    margin-bottom: 25px;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 10px;
+}
+
+.history-list {
+    list-style: none;
+}
+
+.history-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    color: var(--color-text-main);
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+}
+
+.history-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-blue-grey);
+    border-radius: 50%;
+}
+
+.year {
+    min-width: 150px;
+    flex-shrink: 0;
+}
+
+.event {
+    flex-grow: 1;
+}
+
+.sp-br {
+    display: none;
+}
+
+/* Links */
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 35px;
+    background-color: var(--color-soft-blue);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--color-navy);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.link-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(30, 58, 138, 0.08); /* Navy shadow */
+}
+
+.link-title {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.link-url {
+    font-size: 0.95rem;
+    color: var(--color-blue-grey);
+}
+
+/* Contact */
+.contact-text {
+    text-align: center;
+    margin-bottom: 50px;
+    line-height: 2;
+    font-size: 1.05rem;
+}
+
+.contact-form-wrapper {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: var(--color-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.contact-form-wrapper iframe {
+    width: 100%;
+    border: none;
+    min-height: 800px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    background-color: var(--color-navy);
+    color: rgba(255, 255, 255, 0.5); /* Softer white for footer text */
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 5%;
+    }
+    .nav a {
+        margin: 0 10px;
+    }
+    .essay {
+        text-align: left;
+    }
+    .about-grid {
+        padding: 40px 20px;
+    }
+    .section {
+        padding: 80px 0;
+    }
+    .year {
+        min-width: 90px;
+        font-size: 0.95rem;
+    }
+    .sp-br {
+        display: inline;
+    }
+    .link-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 20px 25px;
+    }
+    .hero-title {
+        padding: 35px 20px;
+    }
+    .ph-num {
+        font-size: 6rem;
+        margin-bottom: -35px;
+    }
+    .ph-title {
+        font-size: 1.5rem;
+    }
+    .philosophy-grid {
+        gap: 80px;
+    }
+}
