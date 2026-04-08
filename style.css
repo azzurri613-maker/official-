@@ -192,6 +192,13 @@ h1, h2, h3, h4, .logo, .essay {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
 }
 
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
 .profile-img-wrapper {
     width: 120px;
     height: 120px;
@@ -199,7 +206,6 @@ h1, h2, h3, h4, .logo, .essay {
     overflow: hidden;
     background-color: var(--color-soft-blue);
     border: 1px solid var(--color-blue-grey);
-    margin-bottom: 30px;
 }
 
 .profile-img-wrapper img {
@@ -358,10 +364,14 @@ h1, h2, h3, h4, .logo, .essay {
     .about-grid {
         padding: 40px 20px;
     }
+    .profile-header {
+        flex-direction: column-reverse;
+        gap: 20px;
+        text-align: center;
+    }
     .profile-img-wrapper {
         width: 100px;
         height: 100px;
-        margin-bottom: 20px;
     }
     .section {
         padding: 80px 0;
