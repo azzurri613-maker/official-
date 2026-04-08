@@ -190,19 +190,16 @@ h1, h2, h3, h4, .logo, .essay {
     padding: 80px 60px;
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
-    display: flex;
-    align-items: center;
-    gap: 60px;
 }
 
 .profile-img-wrapper {
-    flex-shrink: 0;
-    width: 200px;
-    height: 200px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     overflow: hidden;
     background-color: var(--color-soft-blue);
     border: 1px solid var(--color-blue-grey);
+    margin-bottom: 30px;
 }
 
 .profile-img-wrapper img {
@@ -360,14 +357,11 @@ h1, h2, h3, h4, .logo, .essay {
     }
     .about-grid {
         padding: 40px 20px;
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
     }
     .profile-img-wrapper {
-        width: 150px;
-        height: 150px;
-        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
     }
     .section {
         padding: 80px 0;
