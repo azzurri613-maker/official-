@@ -375,8 +375,8 @@ h1, h2, h3, h4, .logo, .essay {
         text-align: left; /* テキストは左揃えを維持 */
     }
     .profile-img-wrapper {
-        width: 100px;
-        height: 100px;
+        width: 140px;
+        height: 140px;
         margin: 0; /* 左寄せを維持 */
     }
     .section {
