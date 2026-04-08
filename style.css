@@ -196,7 +196,12 @@ h1, h2, h3, h4, .logo, .essay {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
     margin-bottom: 40px;
+}
+
+.profile-info {
+    flex-grow: 1;
 }
 
 .profile-img-wrapper {
@@ -367,11 +372,12 @@ h1, h2, h3, h4, .logo, .essay {
     .profile-header {
         flex-direction: column-reverse;
         gap: 20px;
-        text-align: center;
+        text-align: left; /* テキストは左揃えを維持 */
     }
     .profile-img-wrapper {
         width: 100px;
         height: 100px;
+        margin: 0; /* 左寄せを維持 */
     }
     .section {
         padding: 80px 0;
