@@ -496,7 +496,8 @@ h1, h2, h3, h4, .logo, .essay {
     }
     .hero-title span,
     .ph-title span,
-    .ph-desc span {
+    .ph-desc span,
+    .essay-title span {
         display: inline-block;
         white-space: nowrap !important;
         word-break: keep-all !important;
@@ -518,5 +519,12 @@ h1, h2, h3, h4, .logo, .essay {
     }
     .ph-desc {
         line-height: 2.2; /* Tighten line height for mobile reading */
+    }
+    .essay-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    .essay-content .description {
+        color: var(--color-blue-grey) !important;
     }
 }
