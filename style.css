@@ -182,9 +182,14 @@ h1, h2, h3, h4, .logo, .essay {
 
 .hero-title span,
 .ph-title span,
-.ph-desc span {
+.ph-desc span,
+.essay-title span,
+.history-list span,
+.profile-desc span,
+.description span {
     display: inline-block;
     white-space: nowrap !important;
+    word-break: keep-all !important;
 }
 
 .view-more {
