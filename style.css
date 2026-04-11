@@ -180,6 +180,100 @@ h1, h2, h3, h4, .logo, .essay {
     letter-spacing: 0.08em;
 }
 
+.hero-title span,
+.ph-title span,
+.ph-desc span {
+    display: inline-block;
+    white-space: nowrap !important;
+}
+
+.view-more {
+    display: inline-block;
+    margin-top: 30px;
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    color: var(--color-blue-grey);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    z-index: 2;
+    padding-bottom: 5px;
+}
+
+.view-more::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-navy);
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.view-more:hover {
+    color: var(--color-navy);
+    transform: translateX(8px);
+}
+
+.view-more:hover::after {
+    width: 100%;
+}
+
+.essay-header {
+    padding: 120px 0 60px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.essay-title {
+    font-size: 2.4rem;
+    color: var(--color-navy);
+    margin-bottom: 30px;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+}
+
+.essay-content {
+    line-height: 2.8;
+    color: var(--color-text-main);
+    margin: 0 auto 100px;
+    font-size: 1.15rem;
+    max-width: 700px; /* 読みやすい幅 */
+    text-align: justify;
+    opacity: 0;
+    animation: fadeIn 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) 0.3s forwards;
+}
+
+.essay-content p {
+    margin-bottom: 50px;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 50px;
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    color: var(--color-blue-grey);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeIn 1s ease 1s forwards;
+}
+
+.back-home:hover {
+    color: var(--color-navy);
+    transform: translateX(-8px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* About */
 .about {
     background-color: #F4F1EC; /* Warm parchment — invites reflection */
@@ -355,57 +449,74 @@ h1, h2, h3, h4, .logo, .essay {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 3%; /* Reduced padding to give more space for text */
+    }
     .header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px 5%;
+        /* Keep original horizontal layout */
+        padding: 30px 5%; /* Slightly tighter than PC 40px but same structure */
     }
     .nav a {
-        margin: 0 10px;
-    }
-    .essay {
-        text-align: left;
+        margin-left: 15px; /* Tighter margin than PC 30px to fit */
+        font-size: 0.85rem;
     }
     .about-grid {
         padding: 40px 20px;
     }
     .profile-header {
-        flex-direction: column-reverse;
+        /* Keep horizontal layout */
         gap: 20px;
-        text-align: left; /* テキストは左揃えを維持 */
     }
     .profile-img-wrapper {
-        width: 140px;
-        height: 140px;
-        margin: 0; /* 左寄せを維持 */
+        width: 100px; /* Smaller to fit side-by-side on mobile */
+        height: 100px;
+        flex-shrink: 0;
+    }
+    .profile-text h3 {
+        font-size: 1.4rem;
     }
     .section {
-        padding: 80px 0;
+        padding: 100px 0; /* Moderate padding */
     }
     .year {
-        min-width: 90px;
-        font-size: 0.95rem;
+        min-width: 80px; /* Compact but keeps horizontal structure */
+        font-size: 0.9rem;
     }
     .sp-br {
         display: inline;
     }
     .link-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        /* Keep horizontal layout */
         padding: 20px 25px;
     }
     .hero-title {
-        padding: 35px 20px;
+        padding: 0 10px;
+        font-size: clamp(1rem, 5vw, 1.8rem); /* Smaller font size to ensure spans fit */
+        letter-spacing: 0.1em; /* Reduced letter spacing on mobile */
+    }
+    .hero-title span,
+    .ph-title span,
+    .ph-desc span {
+        display: inline-block;
+        white-space: nowrap !important;
+        word-break: keep-all !important;
     }
     .ph-num {
-        font-size: 6rem;
-        margin-bottom: -35px;
+        font-size: 5rem;
+        margin-bottom: -30px;
     }
     .ph-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     .philosophy-grid {
         gap: 80px;
+    }
+    /* Fix awkward line breaks on mobile */
+    .hero-content br,
+    .philosophy-item br {
+        display: none;
+    }
+    .ph-desc {
+        line-height: 2.2; /* Tighten line height for mobile reading */
     }
 }
