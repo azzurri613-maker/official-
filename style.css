@@ -10,6 +10,7 @@
     /* Text: warm dark grey, never pure black */
     --color-text-main: #4E5460;
     --color-text-light: #A8B2BD;
+    --color-border: rgba(61, 79, 98, 0.15);
     
     /* Typography */
     --font-serif: 'Shippori Mincho', serif;
@@ -34,7 +35,7 @@ body {
     line-height: 1.8;
 }
 
-h1, h2, h3, h4, .logo, .essay {
+h1, h2, h3, h4, .logo, .essay, .intro-title {
     font-family: var(--font-serif);
 }
 
@@ -121,15 +122,16 @@ h1, h2, h3, h4, .logo, .essay {
 
 /* Sections */
 .section {
-    padding: 180px 0; /* Massive philosophical padding */
+    padding: 240px 0; /* Deep philosophical space */
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--color-navy);
     text-align: center;
-    margin-bottom: 70px;
-    letter-spacing: 0.1em;
+    margin-bottom: 90px;
+    letter-spacing: 0.3em; /* More air between characters */
+    font-weight: 300;
 }
 
 /* Message / Philosophy */
@@ -150,12 +152,12 @@ h1, h2, h3, h4, .logo, .essay {
 
 .ph-num {
     font-family: var(--font-serif);
-    font-size: 8rem;
-    color: #B8A898; /* Warm sand tone — gentle and philosophical */
+    font-size: 10rem;
+    color: #B8A898; 
     line-height: 1;
-    margin-bottom: -40px;
+    margin-bottom: -50px;
     font-weight: 400;
-    opacity: 0.22; /* Visible but whisper-soft */
+    opacity: 0.15; /* Even softer */
     z-index: 0;
 }
 
@@ -171,13 +173,13 @@ h1, h2, h3, h4, .logo, .essay {
 }
 
 .ph-desc {
-    font-size: 1.1rem;
-    line-height: 2.8; /* 詩のように非常にゆったりと */
-    color: #475569; /* 真っ黒ではなく、柔らかい藍色グレー */
+    font-size: 1.15rem;
+    line-height: 3; /* Even more spacious breathing room */
+    color: #475569;
     position: relative;
     z-index: 1;
     max-width: 650px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
 }
 
 .hero-title span,
@@ -421,27 +423,95 @@ h1, h2, h3, h4, .logo, .essay {
 }
 
 /* Contact */
+/* Contact Section Enhancements */
+.contact-wrapper {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-lead {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    color: var(--color-navy);
+    margin-bottom: 40px;
+    letter-spacing: 0.2em;
+}
+
 .contact-text {
     text-align: center;
-    margin-bottom: 50px;
-    line-height: 2;
-    font-size: 1.05rem;
+    margin-bottom: 80px;
+    line-height: 2.4;
+    font-size: 1.1rem;
+    color: var(--color-text-main);
 }
 
-.contact-form-wrapper {
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto;
-    background-color: var(--color-bg);
-    border-radius: 16px;
-    overflow: hidden;
+.contact-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.contact-btn {
     position: relative;
+    display: inline-block;
+    padding: 25px 60px;
+    text-decoration: none;
+    color: var(--color-navy);
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid var(--color-border);
+    background: transparent;
+    overflow: hidden;
 }
 
-.contact-form-wrapper iframe {
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-navy);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateX(-50%);
+}
+
+.contact-btn:hover {
+    color: var(--color-bg);
+    background-color: var(--color-navy);
+    border-color: var(--color-navy);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(61, 79, 98, 0.15);
+}
+
+.contact-btn:hover .btn-line {
     width: 100%;
-    border: none;
-    min-height: 800px;
+}
+
+.contact-sub {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    letter-spacing: 0.05em;
+}
+
+/* Scroll Reveals */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Footer */
@@ -500,25 +570,47 @@ h1, h2, h3, h4, .logo, .essay {
         font-size: clamp(1rem, 5vw, 1.8rem); /* Smaller font size to ensure spans fit */
         letter-spacing: 0.1em; /* Reduced letter spacing on mobile */
     }
-    .hero-title span,
-    .ph-title span,
-    .ph-desc span,
-    .essay-title span {
-        display: inline-block;
-        white-space: nowrap !important;
-        word-break: keep-all !important;
-    }
-    .ph-num {
-        font-size: 5rem;
-        margin-bottom: -30px;
-    }
-    .ph-title {
-        font-size: 1.3rem;
-    }
-    .philosophy-grid {
-        gap: 80px;
-    }
-    /* Fix awkward line breaks on mobile */
+/* Opening Intro */
+.intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3D4F62; /* Navy background */
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.5s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 1.5s;
+    pointer-events: none; /* Let clicks pass through once faded out */
+}
+
+.intro.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-content {
+    text-align: center;
+}
+
+.intro-title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: #E2E8F0;
+    letter-spacing: 0.4em;
+    line-height: 2.2;
+    font-weight: 300;
+    opacity: 0;
+    animation: introFadeIn 3s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s forwards;
+}
+
+@keyframes introFadeIn {
+    0% { opacity: 0; transform: translateY(10px); filter: blur(5px); }
+    100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Fix awkward line breaks on mobile */
     .hero-content br,
     .philosophy-item br {
         display: none;
