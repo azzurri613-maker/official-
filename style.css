@@ -526,13 +526,14 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 1.5s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 1.5s;
-    pointer-events: none; /* Let clicks pass through once faded out */
+    transition: opacity 1.0s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 1.0s;
+    pointer-events: auto; /* Block interactions until faded */
 }
 
 .intro.fade-out {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none; /* Allow interaction with content below */
 }
 
 .intro-content {
