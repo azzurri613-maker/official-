@@ -8,12 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const reveals = document.querySelectorAll('.reveal');
-
     const revealOnScroll = () => {
         reveals.forEach(reveal => {
             const windowHeight = window.innerHeight;
             const elementTop = reveal.getBoundingClientRect().top;
-            const elementVisible = 120; // Trigger when element is 120px from bottom
+            const elementVisible = 80; // Trigger slightly earlier
 
             if (elementTop < windowHeight - elementVisible) {
                 reveal.classList.add('active');
@@ -21,9 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Initial check
-    revealOnScroll();
-
-    // Check on scroll
+    // Trigger reveal check after initial load and on scroll
     window.addEventListener('scroll', revealOnScroll);
+    
+    // Check after fonts and images are fully loaded
+    window.addEventListener('load', () => {
+        setTimeout(revealOnScroll, 100);
+    });
+
+    // Initial check (in case some are already in view)
+    setTimeout(revealOnScroll, 500);
 });

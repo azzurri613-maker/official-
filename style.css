@@ -612,15 +612,14 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     }
 }
 
-/* Fix awkward line breaks on mobile */
-
-/* Fix awkward line breaks on mobile */
+/* Additional Mobile Fixes */
+@media (max-width: 768px) {
     .hero-content br,
     .philosophy-item br {
         display: none;
     }
     .ph-desc {
-        line-height: 2.2; /* Tighten line height for mobile reading */
+        line-height: 2.2;
     }
     .essay-title {
         font-size: 1.8rem;
