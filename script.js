@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initAnimation = () => {
     // Opening Fade
     const intro = document.getElementById('intro');
     if (intro) {
@@ -31,4 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Continuous checks
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('resize', revealOnScroll);
-});
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAnimation);
+} else {
+    initAnimation();
+}
