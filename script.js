@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (intro) {
         setTimeout(() => {
             intro.classList.add('fade-out');
-        }, 4500); // 4.5 seconds of philosophical silence and message
+        }, 2000); // Shortened to 2 seconds for better responsiveness
     }
 
     const reveals = document.querySelectorAll('.reveal');
