@@ -615,7 +615,6 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
 
 /* Additional Mobile Fixes */
 @media (max-width: 768px) {
-    .hero-content br,
     .philosophy-item br {
         display: none;
     }
