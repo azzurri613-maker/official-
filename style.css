@@ -122,15 +122,15 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
 
 /* Sections */
 .section {
-    padding: 240px 0; /* Deep philosophical space */
+    padding: 160px 0; /* 適度なゆとりを持ちつつ、情報の繋がりを維持 */
 }
 
 .section-title {
     font-size: 2.2rem;
     color: var(--color-navy);
     text-align: center;
-    margin-bottom: 90px;
-    letter-spacing: 0.3em; /* More air between characters */
+    margin-bottom: 60px;
+    letter-spacing: 0.3em;
     font-weight: 300;
 }
 
@@ -164,7 +164,7 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
 .philosophy-grid {
     display: flex;
     flex-direction: column;
-    gap: 160px; /* まるで余白を楽しむような深い間 */
+    gap: 100px; /* 繋がりを感じさせる、程よい間隔 */
     margin-top: 50px;
 }
 
