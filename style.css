@@ -134,25 +134,32 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     font-weight: 300;
 }
 
-/* Message / Philosophy */
-.message-intro {
+/* How I Work */
+.how-i-work-content {
     text-align: center;
-    margin-bottom: 120px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.message-intro-text {
+.intro-text-block {
     font-size: 1.15rem;
     line-height: 2.6;
     color: var(--color-text-main);
     letter-spacing: 0.12em;
+    margin-bottom: 60px;
 }
 
-.message-intro-text span {
+.intro-text-block:last-child {
+    margin-bottom: 0;
+}
+
+.intro-text-block span {
     display: inline-block;
     white-space: nowrap !important;
     word-break: keep-all !important;
 }
 
+/* Message / Philosophy */
 .philosophy-grid {
     display: flex;
     flex-direction: column;
