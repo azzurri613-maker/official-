@@ -407,6 +407,15 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     flex-grow: 1;
 }
 
+.event-detail {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-blue-grey);
+    margin-top: 5px;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+}
+
 .sp-br {
     display: none;
 }
