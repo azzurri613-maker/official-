@@ -135,10 +135,15 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
 }
 
 /* How I Work */
+.how-i-work {
+    background-color: #F0F4F8; /* 霧がかったブルー。MessageとAboutの間の境界を明確に */
+}
+
 .how-i-work-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
+    padding: 40px;
 }
 
 .intro-text-block {
@@ -174,6 +179,12 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     align-items: center; 
     text-align: center;
     position: relative;
+    padding: 40px;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.philosophy-item:hover {
+    transform: translateY(-5px);
 }
 
 .ph-num {
@@ -191,11 +202,23 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     font-family: var(--font-serif);
     font-size: 1.6rem;
     color: var(--color-navy);
-    margin-bottom: 30px;
-    letter-spacing: 0.25em; /* ゆっくりと読ませる */
-    font-weight: 500; /* 優しく */
+    margin-bottom: 40px;
+    letter-spacing: 0.25em;
+    font-weight: 500;
     position: relative;
     z-index: 1;
+}
+
+.ph-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background-color: var(--color-blue-grey);
+    opacity: 0.5;
 }
 
 .ph-desc {
@@ -423,6 +446,10 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
 }
 
 /* Links */
+.links {
+    background-color: #F9F8F6; /* リンクを目立たせるための非常に淡いニュートラルカラー */
+}
+
 .links-list {
     display: flex;
     flex-direction: column;
@@ -436,16 +463,19 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     justify-content: space-between;
     align-items: center;
     padding: 25px 35px;
-    background-color: var(--color-soft-blue);
+    background-color: var(--color-bg);
+    border: 1px solid rgba(61, 79, 98, 0.05);
     border-radius: 12px;
     text-decoration: none;
     color: var(--color-navy);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .link-item:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(30, 58, 138, 0.08); /* Navy shadow */
+    background-color: #fff;
+    border-color: var(--color-blue-grey);
+    box-shadow: 0 10px 30px rgba(61, 79, 98, 0.05);
 }
 
 .link-title {
