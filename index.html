@@ -182,12 +182,62 @@
                         <span>30分程度で、現在の状況と</span><span>「滞り」の要因を言葉にします。</span><br>
                         <span>大きな決断でなくて構いませんし、</span><span>無理に結論を出すことはありません。</span>
                     </p>
-                    <div class="contact-action">
-                        <a href="mailto:azzurri613@gmail.com" class="contact-btn">
-                            <span class="btn-text">Begin Dialogue / 対話の始まり</span>
-                            <span class="btn-line"></span>
-                        </a>
-                        <p class="contact-sub">※メールソフトが起動します</p>
+                    <div class="contact-form-container">
+                        <form action="https://formsubmit.co/azzurri613@gmail.com" method="POST" class="contact-form">
+                            <!-- Form Configuration -->
+                            <input type="hidden" name="_subject" value="大谷尚公式サイトからのお問い合わせ">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="_next" value="https://azzurri613-maker.github.io/official-/">
+
+                            <div class="form-group">
+                                <label for="name" class="form-label"><span>お名前</span></label>
+                                <input type="text" name="name" id="name" class="form-input" required placeholder="お名前を入力してください">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label"><span>メールアドレス</span></label>
+                                <input type="email" name="email" id="email" class="form-input" required placeholder="example@mail.com">
+                            </div>
+
+                            <div class="form-group">
+                                <p class="form-label"><span>現在の状況（複数選択可）</span></p>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interests" value="判断に迷っていることがある">
+                                        <span>判断に迷っていることがある</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interests" value="AI活用に不安がある">
+                                        <span>AI活用に不安がある</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interests" value="業務や方向性を整理したい">
+                                        <span>業務や方向性を整理したい</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interests" value="法的な懸念がある">
+                                        <span>法的な懸念がある</span>
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="interests" value="うまく言葉にできない違和感がある">
+                                        <span>うまく言葉にできない違和感がある</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message" class="form-label"><span>今の状況や、気になっていること</span></label>
+                                <textarea name="message" id="message" class="form-textarea" rows="6" placeholder="うまく言葉になっていなくても大丈夫です。自由にご記入ください。"></textarea>
+                            </div>
+
+                            <div class="contact-action">
+                                <button type="submit" class="contact-btn">
+                                    <span class="btn-text">Send Message / メッセージを送信</span>
+                                    <span class="btn-line"></span>
+                                </button>
+                                <p class="contact-sub">※送信後、確認メールが届きます</p>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
