@@ -246,8 +246,9 @@
 
                             <div class="form-reassurance">うまく言葉になっていなくても大丈夫です</div>
                             <div class="contact-action">
-                                <button type="submit" class="cta-button">
-                                    <span class="btn-text">Send Message / メッセージを送信</span>
+                                <button type="submit" class="cta-button"
+                                onclick="gtag('event', 'form_submit_click', {'event_category':'engagement'});">
+                                  <span class="btn-text">Send Message / メッセージを送信</span>
                                 </button>
                                 <p class="contact-sub">※送信後、確認メールが届きます</p>
                             </div>
