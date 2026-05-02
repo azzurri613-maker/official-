@@ -154,6 +154,7 @@ h2 {
     background: #000;
     color: #fff;
     font-size: 19px;
+    font-family: var(--font-serif);
     padding: 20px 40px;
     border-radius: 12px;
     margin: 48px auto;
