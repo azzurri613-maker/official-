@@ -35,8 +35,9 @@ body {
     line-height: 1.8;
 }
 
-h1, h2, h3, h4, .logo, .essay, .intro-title {
-    font-family: var(--font-serif);
+p, li {
+    font-size: 16px;
+    line-height: 1.8;
 }
 
 .container {
@@ -121,22 +122,76 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
 }
 
 /* Sections */
-.section {
-    padding: 160px 0; /* 適度なゆとりを持ちつつ、情報の繋がりを維持 */
+section {
+    padding: 110px 24px 130px;
+}
+
+section:nth-of-type(even) {
+    background: #f7f7f7;
 }
 
 .section-title {
-    font-size: 2.2rem;
+    font-size: 34px;
+    font-weight: 700;
     color: var(--color-navy);
     text-align: center;
-    margin-bottom: 60px;
-    letter-spacing: 0.3em;
-    font-weight: 300;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    letter-spacing: 0.06em;
+    font-family: var(--font-serif);
 }
 
-/* How I Work */
-.how-i-work {
-    background-color: #F0F4F8; /* 霧がかったブルー。MessageとAboutの間の境界を明確に */
+h2 {
+    font-size: 34px;
+    font-weight: 700;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    letter-spacing: 0.06em;
+}
+
+/* CTA & Emphasis */
+.cta-button {
+    background: #000;
+    color: #fff;
+    font-size: 19px;
+    padding: 20px 40px;
+    border-radius: 12px;
+    margin: 48px auto;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cta-button:hover {
+    background: #222;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.hero-action {
+    margin-top: 60px;
+}
+
+.highlight {
+    font-size: 19px;
+    font-weight: 700;
+    display: inline-block;
+    margin: 10px 0;
+    color: var(--color-navy);
+}
+
+/* Form Reassurance */
+.form-reassurance {
+    text-align: center;
+    font-family: var(--font-serif);
+    margin-bottom: 24px;
+    font-size: 1.1rem;
+    color: var(--color-text-main);
 }
 
 .how-i-work-content {
@@ -513,60 +568,11 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     color: var(--color-text-main);
 }
 
-.contact-action {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-}
-
-.contact-btn {
-    position: relative;
-    display: inline-block;
-    padding: 25px 60px;
-    text-decoration: none;
-    color: var(--color-navy);
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    letter-spacing: 0.15em;
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border: 1px solid var(--color-border);
-    background: transparent;
-    overflow: hidden;
-}
-
-.btn-text {
-    position: relative;
-    z-index: 2;
-}
-
-.btn-line {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 1px;
-    background-color: var(--color-navy);
-    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-    transform: translateX(-50%);
-}
-
-.contact-btn:hover {
-    color: var(--color-bg);
-    background-color: var(--color-navy);
-    border-color: var(--color-navy);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(61, 79, 98, 0.15);
-}
-
-.contact-btn:hover .btn-line {
-    width: 100%;
-}
-
 .contact-sub {
     font-size: 0.85rem;
     color: var(--color-text-light);
     letter-spacing: 0.05em;
+    margin-top: 10px;
 }
 
 .contact {
@@ -600,21 +606,20 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
 
 .form-input, .form-textarea {
     width: 100%;
-    padding: 15px 20px;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-bg);
+    padding: 14px;
+    border: 1px solid #ccc;
+    background-color: #fff;
     color: var(--color-text-main);
     font-family: var(--font-serif);
     font-size: 1rem;
-    border-radius: 4px;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .form-input:focus, .form-textarea:focus {
     outline: none;
-    border-color: var(--color-navy);
-    background-color: #fff;
-    box-shadow: 0 5px 15px rgba(61, 79, 98, 0.05);
+    border-color: #000;
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
 }
 
 .checkbox-group {
@@ -646,10 +651,7 @@ h1, h2, h3, h4, .logo, .essay, .intro-title {
     accent-color: var(--color-navy);
 }
 
-.contact-btn {
-    cursor: pointer;
-    border-radius: 0;
-}
+/* Action Buttons Consolidated to .cta-button */
 
 /* Scroll Reveals */
 .reveal {
