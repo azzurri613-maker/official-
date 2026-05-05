@@ -297,8 +297,22 @@ h2 {
 .profile-desc span,
 .description span {
     display: inline-block;
-    white-space: nowrap !important;
-    word-break: keep-all !important;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+/* On desktop, we can be stricter about nowrap to ensure phrases stay together */
+@media (min-width: 769px) {
+    .hero-title span,
+    .ph-title span,
+    .ph-desc span,
+    .essay-title span,
+    .essay-content span,
+    .history-list span,
+    .profile-desc span,
+    .description span {
+        white-space: nowrap;
+    }
 }
 
 .view-more {
@@ -770,14 +784,18 @@ h2 {
     }
     .hero-title {
         padding: 0 10px;
-        font-size: clamp(0.95rem, 4vw, 1.3rem); /* Smaller font size to ensure spans fit */
-        letter-spacing: 0.08em; /* Reduced letter spacing on mobile */
+        font-size: clamp(0.9rem, 4.5vw, 1.25rem); /* Fine-tuned for narrow screens */
+        letter-spacing: 0.05em; /* Reduced even more for better fit */
+        line-height: 2.2; /* Slightly tighter line height */
     }
 }
 
 /* Additional Mobile Fixes */
 @media (max-width: 768px) {
-    .philosophy-item br {
+    .hero-title br,
+    .intro-title br,
+    .philosophy-item br,
+    .essay-content br {
         display: none;
     }
     .ph-desc {
